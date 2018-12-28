@@ -4,13 +4,14 @@ import {map} from 'rxjs/operators';
 import { observable } from 'rxjs';
 import {JwtHelperService} from '@auth0/angular-jwt';
 import { getLocaleMonthNames } from '@angular/common';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-baseUrl = 'http://localhost:5000/api/auth/';
+baseUrl = environment.apiUrl + 'auth/';
 constructor(private http: HttpClient) { }
 
 jwtHelper = new  JwtHelperService();
